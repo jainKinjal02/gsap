@@ -1,6 +1,26 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 const GsapFromTo = () => {
   // TODO: Implement the gsap.fromTo() method
+  useGSAP(() => {
+    gsap.fromTo('#red-box', // id and identifier on which you are performing the animation
+      {  x: 0,// takes 2 objects - this  is from object
+        rotation: 0,
+        borderRadius: '0%'
 
+    }, 
+      { 
+      x: 250, // takes two objets - this is to object
+      repeat: -1,
+      yoyo: true, // makes animation reverse on every cycle
+      borderRadius: '100%',
+      rotation: 360,
+      duration: 2, // entire animation i for 2 seconds
+      ease: 'bounce.out'
+    })
+    // it turns a square into a circle bu changing the x and rotation
+  },[])
   return (
     <main>
       <h1>GsapFromTo</h1>
